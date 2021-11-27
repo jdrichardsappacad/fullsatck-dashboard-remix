@@ -1,0 +1,50 @@
+img {
+  width: 120px;
+  height: 120px;
+  margin: 10px 0 25px 0;
+}
+
+button {
+  width: 100px;
+  height: 40px;
+  border: 0.5px solid gray;
+  border-radius: 5px;
+  margin: 15px 10px 0 0;
+  color: rgb(249, 246, 246);
+}
+.products {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.product-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  margin: 0 30px 50px 0;
+  padding: 20px;
+}
+
+.delete-button {
+  background: #39395f;
+  transition: 0.5s;
+}
+
+.delete-button:hover {
+  background: #484879;
+}
+
+.update-button {
+  background: #73a24e;
+  transition: 0.5s;
+}
+
+.update-button:hover {
+  background: #7ba45c;
+}
