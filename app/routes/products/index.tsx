@@ -19,8 +19,8 @@ export let action: ActionFunction = async ({
 }): Promise<Response> => {
 
   let form = await request.formData();
-  .log('form', form.get('_method'))
- let id = form.get('_method')
+ 
+  let id = form.get('_method')
   
  await db.product.delete({
     where:{
