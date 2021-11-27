@@ -68,7 +68,7 @@ type ActionData = {
       return { fieldErrors, fields };
     }
   
-    let product = await db.product.create({
+    await db.product.create({
       data: {image, name, price: +price}
     });
 
