@@ -12,6 +12,7 @@ button {
   margin: 15px 10px 0 0;
   color: rgb(249, 246, 246);
 }
+
 .products {
   margin-top: 100px;
   display: flex;
@@ -40,6 +41,11 @@ button {
 
 .delete-button:hover {
   background: #484879;
+}
+
+.button-row {
+  display: flex;
+  flex-direction: row;
 }
 
 .update-button {

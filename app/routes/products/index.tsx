@@ -73,7 +73,6 @@ export default function ProductsPage(){
               <span className='product-title'>{name}</span>
               <span>${price}</span>
               <div className ='button-row'>
-               
                <Form  action='/products?index' method='post' >
                   <input type="hidden" name="_method" value={id} />
                   <button 
@@ -82,7 +81,6 @@ export default function ProductsPage(){
                       Delete
                   </button>
                 </Form>
-               
                <Link style={{margin:0,padding:0}} to={`/products/${id}`}><button className ='update-button' >Update</button></Link>
               </div>
             </div>
