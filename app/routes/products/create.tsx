@@ -1,5 +1,5 @@
 import React from "react";
-import type { ActionFunction } from "remix";
+import type { ActionFunction, LinksFunction } from "remix";
 import { useActionData, redirect } from "remix";
 import stylesUrl from '../../styles/create.css'
 import { db } from "~/utils/db.server";
