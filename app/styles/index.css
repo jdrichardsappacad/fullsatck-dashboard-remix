@@ -45,50 +45,6 @@ input {
   padding: 5px;
 }
 
-/* .products {
-  margin-top: 100px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.product-detail {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid lightgray;
-  border-radius: 5px;
-  margin: 0 30px 50px 0;
-  padding: 20px;
-} */
-
-/* .delete-button {
-  background: #39395f;
-  transition: 0.5s;
-}
-
-.delete-button:hover {
-  background: #484879;
-}
-
-.update-button {
-  background: #73a24e;
-  transition: 0.5s;
-}
-
-.update-button:hover {
-  background: #7ba45c;
-} */
-
-.submit-button {
-  color: black;
-  font-weight: bold;
-  margin-left: 30px;
-  padding: 0 5px 0 5px;
-}
-
 .add-product {
   margin-top: 50px;
 }

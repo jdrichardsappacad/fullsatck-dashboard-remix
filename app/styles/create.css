@@ -1,0 +1,22 @@
+.errors {
+  font-size: 0.75em;
+  color: red;
+  padding-left: 30px;
+}
+
+.submit-button {
+  font-weight: bold;
+  margin: 10px 0 0 30px;
+  padding: 0 5px 0 5px;
+  width: 150px;
+  height: 50px;
+  border: 0.5px solid gray;
+  border-radius: 5px;
+  background: #73a24e;
+  color: white;
+  transition: 0.5s;
+}
+
+.submit-button:hover {
+  background: #7ba45c;
+}
