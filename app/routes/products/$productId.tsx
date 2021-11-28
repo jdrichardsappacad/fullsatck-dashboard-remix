@@ -7,7 +7,7 @@ import { db } from "~/utils/db.server";
 
 
 type LoaderData = {
-    product:{image:string, name:string, price:number}
+    product:{image:string, name:string, price:string}
 }
 
 export let loader: LoaderFunction = async ({ params }) => {
@@ -17,13 +17,13 @@ export let loader: LoaderFunction = async ({ params }) => {
             id:params.productId
         }
     })
-    
    
     let data: LoaderData = {
       product
     };
+
     return data;
-  };
+};
 
   export let action: ActionFunction = async ({
     request, params
@@ -33,22 +33,23 @@ export let loader: LoaderFunction = async ({ params }) => {
     let image = await form.get('image')
     let name = await form.get('name');
     let price = await form.get('price');
+    let newPrice:number = price ? +price : 0
   
  
     await db.product.update({
         where:{
             id: params.productId
         },
-        data: {image, name, price}
+        data: {image, name, price: newPrice}
     });
 
-     return redirect('/products');
+    return redirect('/products');
   };
 
 
 export default function SingleProduct(){
     let data = useLoaderData<LoaderData>();
-   return(
+    return(
         <div>
             <Form method='post' action={`/products/${data.product.id}`}>
             <input

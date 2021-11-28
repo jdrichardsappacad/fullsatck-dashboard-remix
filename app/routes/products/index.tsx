@@ -1,7 +1,5 @@
 import React from "react";
 import type { ActionFunction} from "remix";
-import { db } from "~/utils/db.server";
-
 import {
   Link,
   LinksFunction,
@@ -9,10 +7,9 @@ import {
   useLoaderData,redirect, Form,
 } from "remix";
 
+import { db } from "~/utils/db.server";
+
 import stylesUrl from '../../styles/product.css'
-
-
-
 
 export let action: ActionFunction = async ({
   request
@@ -22,15 +19,13 @@ export let action: ActionFunction = async ({
  
   let id = form.get('_method')
   
- await db.product.delete({
+  await db.product.delete({
     where:{
       id
     }
   });
 
   return redirect('/products');
-  
-  
 };
 
 export let links: LinksFunction = () => {
@@ -42,7 +37,6 @@ export let links: LinksFunction = () => {
   ];
 };
 
-
 type LoaderData = {
   products:[{id:string, name:string,image:string, price:number}]
 }
@@ -51,10 +45,10 @@ export let loader: LoaderFunction = async ({ request }) => {
     
     let products = await db.product.findMany()
     
-  
     let data: LoaderData = {
       products
     };
+
     return data;
   };
 
@@ -63,7 +57,6 @@ export let loader: LoaderFunction = async ({ request }) => {
 export default function ProductsPage(){
     let data = useLoaderData<LoaderData>();
     
-
     return(
       <div>
         <div className ='products'>
@@ -81,7 +74,7 @@ export default function ProductsPage(){
                       Delete
                   </button>
                 </Form>
-               <Link style={{margin:0,padding:0}} to={`/products/${id}`}><button className ='update-button' >Update</button></Link>
+                <Link style={{margin:0,padding:0}} to={`/products/${id}`}><button className ='update-button' >Update</button></Link>
               </div>
             </div>
           ))}

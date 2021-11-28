@@ -1,3 +1,4 @@
+import React from 'react'
 import {NavLink, Outlet} from 'remix'
 import type {LinksFunction} from 'remix'
 
@@ -11,15 +12,15 @@ export let links: LinksFunction = () => {
 export default function Products(){
    return (
     <div>
-        <ul>
+      <ul>
         <li>
             <NavLink to='/'>Products</NavLink> |
         </li>
         <li>
             <NavLink to='create'>Create Product</NavLink>
         </li>
-        </ul>
-        <Outlet />
+      </ul>
+      <Outlet />
     </div>
   );
        

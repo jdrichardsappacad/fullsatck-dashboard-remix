@@ -16,6 +16,11 @@ ul {
   padding: 20px;
 }
 
+li {
+  color: white;
+  text-decoration: none;
+}
+
 a {
   text-decoration: none;
   padding: 0 15px 0 15px;
@@ -26,11 +31,6 @@ a {
 a:hover {
   color: #b5e494;
   transition: 1s;
-}
-
-li {
-  color: white;
-  text-decoration: none;
 }
 
 h3 {
@@ -53,4 +53,21 @@ input {
 .product-title {
   font-weight: bold;
   color: gray;
+}
+
+.submit-button {
+  font-weight: bold;
+  margin: 10px 0 0 30px;
+  padding: 0 5px 0 5px;
+  width: 150px;
+  height: 50px;
+  border: 0.5px solid gray;
+  border-radius: 5px;
+  background: #73a24e;
+  color: white;
+  transition: 0.5s;
+}
+
+.submit-button:hover {
+  background: #7ba45c;
 }

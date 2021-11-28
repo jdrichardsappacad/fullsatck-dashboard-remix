@@ -19,11 +19,11 @@ const validateImage = (image:string) => {
 }
 
 const validateName = (name:string) => {
-if(name.length <= 2) return 'Name must be 3 or more charachters'
+if(name.length <= 6) return 'Name must be 6 or more charachters'
 }
 
-const validatePrice = (price:number) => {
-    if(price < 10) return ('Price must be higher than $10')
+const validatePrice = (price:strubg) => {
+    if(+price < 10) return ('Price must be higher than $10')
 }
 
 
@@ -73,65 +73,62 @@ type ActionData = {
     });
 
      return redirect('/');
-    
-    
   };
 
 export default function CreateProduct(){
     let actionData = useActionData<ActionData | undefined>();
 
     return(
-        <div className='add-product'>
-            <h3>Add A Product</h3>
-            <form method="post" className='add-product'>
-                <input
-                    type="text"
-                    name="image"
-                    defaultValue={actionData?.fields?.image}
-                    placeholder='Image Url'
-                />
-                {actionData?.fieldErrors?.image ? (
-                    <p
+      <div className='add-product'>
+          <h3>Add A Product</h3>
+          <form method="post" className='add-product'>
+              <input
+                  type="text"
+                  name="image"
+                  defaultValue={actionData?.fields?.image}
+                  placeholder='Image Url'
+              />
+              {actionData?.fieldErrors?.image && (
+                  <p
+                  className="errors"
+                  role="alert"
+                  id="image-error"
+                  >
+                  {actionData.fieldErrors.image}
+                  </p>
+              )}
+              <input
+                  type="text"
+                  name="name"
+                  placeholder='Product Name'
+              />
+              {actionData?.fieldErrors?.name && (
+                  <p
                     className="errors"
                     role="alert"
-                    id="image-error"
-                    >
-                    {actionData.fieldErrors.image}
-                    </p>
-                ) : null}
-                <input
-                    type="text"
-                    name="name"
-                    placeholder='Product Name'
-                />
-                {actionData?.fieldErrors?.name ? (
-                    <p
-                      className="errors"
-                      role="alert"
-                      id="name-error"
-                    >
-                    {actionData.fieldErrors.name}
-                    </p>
-                ) : null}
-                <input
-                    type='number'
-                    name="price"
-                    placeholder='Price'
-                />
-                {actionData?.fieldErrors?.price ? (
-                    <p
-                      className="errors"
-                      role="alert"
-                      id="price-error"
-                    >
-                        {actionData.fieldErrors.price}
-                    </p>
-                ) : null}
-                <button className='submit-button'>
-                    Add Product
-                </button>
-            </form>
-            
-        </div>
+                    id="name-error"
+                  >
+                  {actionData.fieldErrors.name}
+                  </p>
+              )}
+              <input
+                  type='number'
+                  name="price"
+                  placeholder='Price'
+              />
+              {actionData?.fieldErrors?.price && (
+                  <p
+                    className="errors"
+                    role="alert"
+                    id="price-error"
+                  >
+                      {actionData.fieldErrors.price}
+                  </p>
+              )}
+              <button className='submit-button'>
+                  Add Product
+              </button>
+          </form>  
+      </div>
     )
 }
