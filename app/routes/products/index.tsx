@@ -74,7 +74,7 @@ export default function ProductsPage(){
                       Delete
                   </button>
                 </Form>
-                <Link style={{margin:0,padding:0}} to={`/products/${id}`}><button className ='update-button' >Update</button></Link>
+                <Link className='link-style' to={`/products/${id}`}><button className ='update-button' >Update</button></Link>
               </div>
             </div>
           ))}
